@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/abasnfarah/shoeuniverse/issues"
   },
-  "homepage": "https://github.com/abasnfarah/shoeuniverse#readme"
+  "homepage": "https://github.com/abasnfarah/shoeuniverse#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
 }
