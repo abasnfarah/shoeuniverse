@@ -6,10 +6,12 @@ from django.shortcuts import render
 from wagtail.wagtailcore.models import Page, Orderable
 from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel
-
+from wagtail.wagtailimages.models import Image
+from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from modelcluster.fields import ParentalKey
 
 class HomePage(Page):
+#    image = models.imageField(upload_to='uploaded_images', defaults='')
     body = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [
