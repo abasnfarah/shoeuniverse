@@ -13,33 +13,41 @@ from modelcluster.fields import ParentalKey
 class HomePage(Page):
     body = RichTextField(blank=True)
     banner = models.ForeignKey(
-        'wagtailimages.Image',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+'
+      'wagtailimages.Image',
+      null=True,
+      blank=True,
+      on_delete=models.SET_NULL,
+      related_name='+'
     )
 
     content_panels = Page.content_panels + [
-        FieldPanel('body', classname="full"),
-        ImageChooserPanel('banner'),
+      FieldPanel('body', classname="full"),
+      ImageChooserPanel('banner'),
+      InlinePanel('shoe_tiles', label="Shoe Types"),
     ]
 
 class ShoeHistoryPage(Page):
-		body = RichTextField(blank=True)
+	body = RichTextField(blank=True)
 
-		content_panels = Page.content_panels + [
-        FieldPanel('body', classname="full"),
-        InlinePanel('style_tiles', label="Styles"),
-    ]
+	content_panels = Page.content_panels + [
+    FieldPanel('body', classname="full"),
+    InlinePanel('style_tiles', label="Styles"),
+  ]
 
 class ShoeTile(models.Model):
+	# Define objects within the tile (title, image, link)
+
+	# Define panel (similar to content_panel of a Page)
+	panel = [
+	]
+	
 	class Meta:
+		abstract = True
 		verbose_name = "Tile"
 		verbose_name_plural = "Tiles"
 
 class HomeShoeTile(Orderable, ShoeTile):
-	pass
+	page = ParentalKey(HomePage, related_name='shoe_tiles')
 
 class StyleShoeTile(Orderable, ShoeTile):
 	page = ParentalKey(ShoeHistoryPage, related_name='style_tiles')
