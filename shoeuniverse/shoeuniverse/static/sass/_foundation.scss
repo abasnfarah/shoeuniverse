@@ -5,17 +5,34 @@
 // --------------------------------------------------
 // Import the settings file where we set variables that
 // override Foundation's default styles
-@import 'sass/settings';
+@import 'settings';
 
 // Foundation Components
 // --------------------------------------------------
 // Behold, here are all the Foundation components.
 
-@import 'components/bower_components/foundation-sites/scss/foundation';
+@import '../components/bower_components/foundation-sites/scss/foundation';
 
 @include foundation-global-styles;
 @include foundation-grid;
 @include foundation-typography;
 @include foundation-button;
-// @include foundation-forms;
-// @include foundation-visibility-classes;
+
+@include foundation-forms;
+@include foundation-visibility-classes;
+@include foundation-xy-grid-classes;
+
+@include foundation-menu
+@include foundation-top-bar;
+
+.top-bar {
+  background: $primary-blue-opaque;
+  ul {
+    background: transparent;
+    li {
+      a {
+        color: $white;
+      }
+    }
+  }
+}

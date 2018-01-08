@@ -36,9 +36,13 @@ class ShoeHistoryPage(Page):
 
 class ShoeTile(models.Model):
   # Define objects within the tile (title, image, link)
+  embed_url = models.URLField("Embed URL", blank=True)
+  title = models.CharField(max_length=255, blank=True)
 
   # Define panel (similar to content_panel of a Page)
   panel = [
+    FieldPanel('title'),
+    FieldPanel('embed_url'),
   ]
 
   class Meta:

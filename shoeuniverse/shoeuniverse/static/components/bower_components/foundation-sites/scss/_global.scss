@@ -30,6 +30,19 @@ $foundation-palette: (
   alert: #cc4b37,
 ) !default;
 
+/// Colors used for primary and secondary UI items
+/// @type Color
+$primary-blue: #1b264f;
+
+/// @type Color
+$primary-blue-opaque: rgba(27, 39, 80, 0.6);
+
+/// @type Color
+$secondary-blue: #576ca8;
+
+/// @type Color
+$secondary-brown: #302b27;
+
 /// Color used for light gray UI items.
 /// @type Color
 $light-gray: #e6e6e6 !default;
