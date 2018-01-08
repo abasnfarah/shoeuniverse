@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'wagtail.wagtailadmin',
     'wagtail.wagtailcore',
 
+    'compressor',
+    'djangobower',
     'modelcluster',
     'taggit',
 
@@ -119,6 +121,9 @@ USE_TZ = True
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+
+    'compressor.finders.CompressorFinder',
+    'djangobower.finders.BowerFinder',
 ]
 
 STATICFILES_DIRS = [
@@ -127,6 +132,23 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+
+# Specify the route to the location you would like the bower components to be installed 
+BOWER_COMPONENTS_ROOT = os.path.join(PROJECT_DIR,'static/components/')
+
+# Add foundation sites to the list of bower componenets to be installed 
+BOWER_INSTALLED_APPS = (
+    'foundation-sites',
+)
+
+# Set custom settings for compressor 
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'django_libsass.SassCompiler'),
+)
+
+# COMPRESS_ENABLED = True
+COMPRESS_OUTPUT_DIR = 'compressed'
+COMPRESS_OFFLINE = True
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

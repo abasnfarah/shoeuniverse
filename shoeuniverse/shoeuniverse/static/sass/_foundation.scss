@@ -1,0 +1,21 @@
+// Make sure the charset is set appropriately
+@charset 'UTF-8';
+
+// Foundation Settings
+// --------------------------------------------------
+// Import the settings file where we set variables that
+// override Foundation's default styles
+@import 'sass/settings';
+
+// Foundation Components
+// --------------------------------------------------
+// Behold, here are all the Foundation components.
+
+@import 'components/bower_components/foundation-sites/scss/foundation';
+
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-typography;
+@include foundation-button;
+// @include foundation-forms;
+// @include foundation-visibility-classes;
