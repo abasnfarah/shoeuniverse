@@ -27,29 +27,29 @@ class HomePage(Page):
     ]
 
 class ShoeHistoryPage(Page):
-	body = RichTextField(blank=True)
+  body = RichTextField(blank=True)
 
-	content_panels = Page.content_panels + [
+  content_panels = Page.content_panels + [
     FieldPanel('body', classname="full"),
     InlinePanel('style_tiles', label="Styles"),
   ]
 
 class ShoeTile(models.Model):
-	# Define objects within the tile (title, image, link)
+  # Define objects within the tile (title, image, link)
 
-	# Define panel (similar to content_panel of a Page)
-	panel = [
-	]
-	
-	class Meta:
-		abstract = True
-		verbose_name = "Tile"
-		verbose_name_plural = "Tiles"
+  # Define panel (similar to content_panel of a Page)
+  panel = [
+  ]
+
+  class Meta:
+    abstract = True
+    verbose_name = "Tile"
+    verbose_name_plural = "Tiles"
 
 class HomeShoeTile(Orderable, ShoeTile):
-	page = ParentalKey(HomePage, related_name='shoe_tiles')
+  page = ParentalKey(HomePage, related_name='shoe_tiles')
 
 class StyleShoeTile(Orderable, ShoeTile):
-	page = ParentalKey(ShoeHistoryPage, related_name='style_tiles')
+  page = ParentalKey(ShoeHistoryPage, related_name='style_tiles')
 
 
