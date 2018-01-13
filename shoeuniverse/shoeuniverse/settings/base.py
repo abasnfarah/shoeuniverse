@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'djangobower',
     'modelcluster',
     'taggit',
+    'wagtailgmaps',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -113,6 +114,11 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+# Wagtail Maps constraints
+WAGTAIL_ADDRESS_MAP_CENTER = 'Minneapolis, Minnesota, United States'
+WAGTAIL_ADDRESS_MAP_ZOOM = 8
+WAGTAIL_ADDRESS_MAP_KEY = 'AIzaSyAhFjuBdKL-N197mrBJWsTxjW4C8raBLnY'
 
 
 # Static files (CSS, JavaScript, Images)
