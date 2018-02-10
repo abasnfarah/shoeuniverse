@@ -1,9 +1,32 @@
 {% extends "base.html" %}
 
 {% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% load compress %}
+{% load staticfiles %}
+
+{% block extra_css %}
+{% compress css %}
+<link href="{% static 'sass/home.scss' %}" media="screen" rel="stylesheet" type="text/x-scss">
+{% endcompress %}  
+{% endblock %}
 
 {% block body_class %}template-homepage{% endblock %}
 
+{% block hero_image %}
+    {% image page.banner original %}
+{% endblock %}
+
 {% block content %}
-    {{ page.body|richtext }}
+<h1>{{ page.title }}</h1>
+{{ page.body | richtext }}
+<div class="grid-x grid-margin-x">
+  {% for tile in page.shoe_tiles.all %}
+  <div class="cell small-12 medium-6 large-3">
+    {{ tile.title }}
+    {% image tile.image original %}
+  </div>
+  
+  {% endfor %}
+</div>
 {% endblock %}

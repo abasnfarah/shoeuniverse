@@ -26,7 +26,7 @@
 @include foundation-top-bar;
 
 .top-bar {
-  background: $primary-blue-opaque;
+  background: $header-background;
   ul {
     background: transparent;
     li {
@@ -35,4 +35,31 @@
       }
     }
   }
+}
+
+h1 {
+  color: $primary-blue;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h2, h3, h4, h5, h6 {
+  color: $secondary-brown;
+}
+
+.main-content {
+  margin-bottom: 3em;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+h3, h4, h5, h6 {
+  font-style: italic;
+}
+
+.footer {
+  background-color: $footer-background;
+  height: 55px;
 }
