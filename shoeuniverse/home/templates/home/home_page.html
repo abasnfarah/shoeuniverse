@@ -23,8 +23,10 @@
 <div class="grid-x grid-margin-x">
   {% for tile in page.shoe_tiles.all %}
   <div class="cell small-12 medium-6 large-3">
-    {{ tile.title }}
+    <div class="tile">
     {% image tile.image original %}
+    <div class="tile-title">{{ tile.title }}</div>
+    </div>
   </div>
   
   {% endfor %}

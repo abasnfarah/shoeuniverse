@@ -26,7 +26,7 @@
 @include foundation-top-bar;
 
 .top-bar {
-  background: $header-background;
+  background: $primary-blue-opaque;
   ul {
     background: transparent;
     li {
@@ -48,7 +48,7 @@ h2, h3, h4, h5, h6 {
 }
 
 .main-content {
-  margin-bottom: 3em;
+  padding: 2em;
 }
 
 h2 {
@@ -60,6 +60,6 @@ h3, h4, h5, h6 {
 }
 
 .footer {
-  background-color: $footer-background;
+  background-color: $primary-blue;
   height: 55px;
 }

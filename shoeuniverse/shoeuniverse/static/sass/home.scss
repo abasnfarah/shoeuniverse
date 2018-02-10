@@ -9,3 +9,35 @@
     width: 100%;
   }
 }
+
+.main-content {
+  text-align: center;
+}
+
+.tile {
+  position: relative;
+
+  margin-bottom: 2rem;
+
+  img {
+    width: 100%;
+  }
+
+  .tile-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 50%;
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+
+    background-color: rgba(180,180,180,.6);
+    padding: 1em;
+    text-align: center;
+    text-transform: uppercase;
+
+  }
+}
