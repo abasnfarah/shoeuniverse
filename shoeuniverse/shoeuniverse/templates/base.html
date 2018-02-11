@@ -1,4 +1,4 @@
-{% load static wagtailuserbar %}
+{% load static %}
 {% load compress %}
 
 <!DOCTYPE html>
@@ -35,7 +35,6 @@
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
-        {% wagtailuserbar %}
         
         <div class="hero grid-container-fluid" style="background-image:url({% block hero_image %}{% endblock %});">
         <div class="top-bar">
@@ -46,7 +45,7 @@
           </div>
           <div class="top-bar-right">
             <ul class="menu">
-              <li><a href="#">About</a></li>
+              <li><a href="/about">About</a></li>
               <li><a href="#">Contact</a></li>
             </ul>
           </div>

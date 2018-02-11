@@ -25,6 +25,13 @@
 @include foundation-menu
 @include foundation-top-bar;
 
+body {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
 .top-bar {
   background: $primary-opaque;
   ul {
@@ -48,6 +55,7 @@ h2, h3, h4, h5, h6 {
 }
 
 .main-content {
+  flex-grow: 1;
   padding: 2em;
 }
 

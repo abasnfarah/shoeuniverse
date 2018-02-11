@@ -49,7 +49,7 @@ class AboutPage(Page):
   content_panels = Page.content_panels + [
     FieldPanel('body', classname='full'),
     MapFieldPanel('location'),
-    InlinePanel('contributer', label="New Contrubuter"),
+    InlinePanel('contributer', label="New Contributer"),
   ]
 
 class Contributer(models.Model): 

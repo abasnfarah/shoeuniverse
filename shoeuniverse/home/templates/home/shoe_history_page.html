@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% load compress %}
+{% load staticfiles %}
+
+{% block body_class %}historypage{% endblock %}
+
+{% block hero_image %}
+{% image page.banner original as banner %}
+{{ banner.url }}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
