@@ -65,7 +65,7 @@
 // 1. Global
 // ---------
 
-$global-font-size: 100%;
+$global-font-size: 110%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
@@ -75,10 +75,10 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #cc4b37,
 );
-$primary-blue: #2e3138;
-$primary-blue-opaque: rgba(46,49,56,.6);
-$secondary-blue: #6c6f7d;
-$secondary-brown: #60463b;
+$primary: #2e3138;
+$secondary: #6c6f7d;
+$accent: #60463b;
+$primary-opaque: rgba(46,49,56,.6);
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;

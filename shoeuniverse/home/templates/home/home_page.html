@@ -13,8 +13,11 @@
 
 {% block body_class %}template-homepage{% endblock %}
 
+
+
 {% block hero_image %}
-    {% image page.banner original %}
+{% image page.banner original as banner %}
+{{ banner.url }}
 {% endblock %}
 
 {% block content %}

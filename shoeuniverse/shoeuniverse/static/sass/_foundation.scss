@@ -26,7 +26,7 @@
 @include foundation-top-bar;
 
 .top-bar {
-  background: $primary-blue-opaque;
+  background: $primary-opaque;
   ul {
     background: transparent;
     li {
@@ -38,13 +38,13 @@
 }
 
 h1 {
-  color: $primary-blue;
+  color: $primary;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 h2, h3, h4, h5, h6 {
-  color: $secondary-brown;
+  color: $accent;
 }
 
 .main-content {
@@ -60,6 +60,6 @@ h3, h4, h5, h6 {
 }
 
 .footer {
-  background-color: $primary-blue;
-  height: 55px;
+  background-color: $primary;
+  height: 65px;
 }

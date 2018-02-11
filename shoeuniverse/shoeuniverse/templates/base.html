@@ -36,6 +36,8 @@
 
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
+        
+        <div class="hero grid-container-fluid" style="background-image:url({% block hero_image %}{% endblock %});">
         <div class="top-bar">
           <div class="top-bar-left">
             <ul class="dropdown menu" data-dropdown-menu>
@@ -49,8 +51,6 @@
             </ul>
           </div>
         </div>
-        <div class="hero grid-container-fluid">
-            {% block hero_image %}{% endblock %}
         </div>
         <div class="main-content grid-container">
             {% block content %}{% endblock %}

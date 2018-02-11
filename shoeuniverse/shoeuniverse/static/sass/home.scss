@@ -1,12 +1,21 @@
+// Foundation Components
+// --------------------------------------------------
+// Behold, here are all the Foundation components.
+
+@import '../components/bower_components/foundation-sites/scss/util/util';
+
 .hero {
-  max-height: calc(100vh - 55px);
   width: 100vw;
 
-  position: relative;
-  overflow: hidden;
+  background-size: cover;
+  background-position: center;
 
-  img {
-    width: 100%;
+  @include breakpoint(medium) {
+    height: 50vh;
+  }
+
+  @include breakpoint(large) {
+    height: 100vh;
   }
 }
 
@@ -34,7 +43,9 @@
     position: absolute;
     bottom: 0;
 
-    background-color: rgba(180,180,180,.6);
+    background-color: rgba(136,136,136,.6);
+    color: white;
+    font-size: 1.2rem;
     padding: 1em;
     text-align: center;
     text-transform: uppercase;
