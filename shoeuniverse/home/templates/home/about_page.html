@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% load compress %}
+{% load staticfiles %}
+
+{% block body_class %}aboutpage{% endblock %}
+
+
+{% block content %}
+<h1>{{ page.title }}</h1>
+<div>{{ page.body | richtext }}</div>
+<h2>The Development Team<h2>
+{% endblock %}

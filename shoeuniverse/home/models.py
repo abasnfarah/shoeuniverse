@@ -29,7 +29,7 @@ class HomePage(Page):
 
 class ShoeHistoryPage(Page):
   body = RichTextField(blank=True)
-  shoeImage = models.ForeignKey(
+  banner = models.ForeignKey(
     'wagtailimages.Image',
     null=True,
     blank=True,
@@ -39,7 +39,7 @@ class ShoeHistoryPage(Page):
 
   content_panels = Page.content_panels + [
     FieldPanel('body', classname="full"),
-    ImageChooserPanel('shoeImage'),
+    ImageChooserPanel('banner'),
     InlinePanel('style_tiles', label="Styles"),
   ]
 
@@ -49,7 +49,7 @@ class AboutPage(Page):
   content_panels = Page.content_panels + [
     FieldPanel('body', classname='full'),
     MapFieldPanel('location'),
-    InlinePanel('contributer', label="New Contributer"),
+    InlinePanel('contributers', label="New Contributer"),
   ]
 
 class Contributer(models.Model): 
@@ -70,8 +70,8 @@ class Contributer(models.Model):
     verbose_name_plural = 'Contributers'
   
 
-class newContributer(Orderable, Contributer):
-    page = ParentalKey(AboutPage, related_name='contributer')
+class NewContributer(Orderable, Contributer):
+    page = ParentalKey(AboutPage, related_name='contributers')
     
 class ShoeTile(models.Model):
   # Define objects within the tile (title, image, link)
