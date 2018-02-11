@@ -57,11 +57,19 @@ class Contributer(models.Model):
   name = models.CharField(max_length=255, blank=True)
   role = models.CharField(max_length=255, blank=True)
   email = models.EmailField(max_length=255, default='youremail@swag.com')
+  image = models.ForeignKey(
+    'wagtailimages.Image',
+    null=True,
+    blank=True,
+    on_delete=models.SET_NULL,
+    related_name='+'
+  )
   
   panel = [
     FieldPanel('name'),
     FieldPanel('role'),
-    FieldPanel('email')    
+    FieldPanel('email'),
+    ImageChooserPanel('image'),   
   ] 
   
   class Meta:
@@ -84,8 +92,6 @@ class ShoeTile(models.Model):
     related_name='+'
   )
 
-  
-
   # Define panel (similar to content_panel of a Page)
   panel = [
     FieldPanel('title'),  
@@ -102,7 +108,7 @@ class HomeShoeTile(Orderable, ShoeTile):
 
   panel = [
     FieldPanel('embed_url'),
-    FieldPanel('image'),
+    ImageChooserPanel('image'),
   ]
 
 class StyleShoeTile(Orderable, ShoeTile):

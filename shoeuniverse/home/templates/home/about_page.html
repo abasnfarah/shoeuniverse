@@ -5,11 +5,34 @@
 {% load compress %}
 {% load staticfiles %}
 
+{% block extra_css %}
+{% compress css %}
+<link href="{% static 'sass/about.scss' %}" media="screen" rel="stylesheet" type="text/x-scss">
+{% endcompress %}  
+{% endblock %}
+
 {% block body_class %}aboutpage{% endblock %}
 
 
 {% block content %}
 <h1>{{ page.title }}</h1>
 <div>{{ page.body | richtext }}</div>
-<h2>The Development Team<h2>
+<h2>The Development Team</h2>
+<div class="contributers-container">
+  {% for contributer in page.contributers.all %}
+  <div class="grid grid-x contributer">
+    <div class="cell small-4 medium-3 large-2 contributer-image">
+      {% image contributer.image original %}
+    </div>
+    <div class="cell small-8 medium-6 large-8 contributer-info">
+      <div class="contributer-name">{{ contributer.name }}</div>
+      <div>{{ contributer.role }}</div>
+      <div>Minneapolis, MN</div>
+    </div>
+    <div class="small-12 medium-3 large-2">
+      <a class="button contributer-email" href="mailto:{{contributer.email}}">Email</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 {% endblock %}

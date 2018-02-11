@@ -1,0 +1,59 @@
+// Foundation Settings
+// --------------------------------------------------
+// Import the settings file where we set variables that
+// override Foundation's default styles
+@import 'settings';
+
+// Foundation Components
+// --------------------------------------------------
+// Behold, here are all the Foundation components.
+
+@import '../components/bower_components/foundation-sites/scss/util/util';
+
+.contributer {
+  align-items: center;
+
+  border-top: solid 1px $secondary;
+  padding: 1.5rem 1rem;
+
+  &:last-child {
+    border-bottom: solid 1px $secondary;
+  }
+}
+
+.contributer-image {
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+
+  @include breakpoint(small only) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.contributer-info {
+  padding: 1rem 1.5rem;
+
+  .contributer-name {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  @include breakpoint(small only) {
+    margin-bottom: 1.5rem;
+
+    .contributer-name {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.contributer-email {
+  width: 100%;
+  padding: 1rem;
+  margin: 0;
+  text-transform: uppercase;
+}
