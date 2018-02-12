@@ -2,5 +2,4 @@ shoeData
 *.DS_Store
 *.pyc
 *.swp
-shoeuniverse/media/images/
 shoeuniverse/static/
