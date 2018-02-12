@@ -93,6 +93,10 @@ h3, h4, h5, h6 {
   font-style: italic;
 }
 
+hr {
+  border-bottom: 1px solid $secondary-opaque;
+}
+
 .footer {
   background-color: $primary;
   
@@ -146,5 +150,34 @@ h3, h4, h5, h6 {
         padding: 0;
       }
     }
+  }
+}
+
+.tile {
+  position: relative;
+
+  margin-bottom: 2rem;
+
+  img {
+    width: 100%;
+  }
+
+  .tile-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 50%;
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+
+    background-color: rgba(136,136,136,.6);
+    color: white;
+    padding: 1em;
+    text-align: center;
+    text-transform: uppercase;
+
   }
 }

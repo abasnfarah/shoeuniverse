@@ -1,0 +1,20 @@
+// Foundation Components
+// --------------------------------------------------
+// Behold, here are all the Foundation components.
+
+@import '../components/bower_components/foundation-sites/scss/util/util';
+
+.hero {
+    width: 100vw;
+
+    background-size: cover;
+    background-position: center;
+
+    @include breakpoint(medium) {
+        height: 300px;
+    }
+
+    @include breakpoint(large) {
+        height: 500px;
+    }
+}

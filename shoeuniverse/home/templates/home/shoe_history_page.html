@@ -5,6 +5,12 @@
 {% load compress %}
 {% load staticfiles %}
 
+{% block extra_css %}
+{% compress css %}
+<link href="{% static 'sass/history.scss' %}" media="screen" rel="stylesheet" type="text/x-scss">
+{% endcompress %}  
+{% endblock %}
+
 {% block body_class %}historypage{% endblock %}
 
 {% block hero_image %}
@@ -13,4 +19,20 @@
 {% endblock %}
 
 {% block content %}
+<h1>{{ page.title }}</h1>
+<div>{{ page.body | richtext }}</div>
+{% if page.style_tiles.all.count > 0 %}
+<hr>
+<h2>Styles</h2>
+<div class="grid grid-x grid-margin-x">
+{% for style in page.style_tiles.all %}
+    <div class="cell small-6 medium-4 large-2">
+        <div class="tile">
+            {% image style.image original %}
+            <div class="tile-title">{{ style.title }}</div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+{% endif %}
 {% endblock %}
