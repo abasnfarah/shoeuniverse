@@ -13,11 +13,11 @@
 .contributer {
   align-items: center;
 
-  border-top: solid 1px $secondary;
+  border-top: solid 1px $secondary-opaque;
   padding: 1.5rem 1rem;
 
   &:last-child {
-    border-bottom: solid 1px $secondary;
+    border-bottom: solid 1px $secondary-opaque;
   }
 }
 
