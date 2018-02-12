@@ -39,6 +39,11 @@ body {
     li {
       a {
         color: $white;
+        transition: all ease .2s;
+
+        &:hover {
+          opacity: .7;
+        }
       }
     }
   }
@@ -46,6 +51,14 @@ body {
   .menu .menu-title {
     font-weight: bold;
     text-transform: uppercase;
+
+    a {
+      padding: .5rem;
+
+      img {
+        height: 2.2rem;
+      }
+    }
   }
 }
 
@@ -74,5 +87,56 @@ h3, h4, h5, h6 {
 
 .footer {
   background-color: $primary;
-  height: 65px;
+  
+  .footer-container {
+    align-items: center;
+
+    color: $white;
+    padding: 1rem 1.5rem;
+
+    .footer-left {
+      text-align: left;
+
+      a img {
+        height: 2.2rem;
+      }
+
+      @include breakpoint(small only) {
+        text-align: center;
+        padding-bottom: 1rem;
+      }
+    }
+
+    .footer-center {
+      text-align: center;
+      font-size: 2rem;
+
+      a {
+        color: $white;
+        transition: all ease .2s;
+
+        &:hover, &:focus {
+          opacity: .6;
+        }
+      }
+
+      .fa-facebook-f {
+        width: 2rem;
+      }
+
+      @include breakpoint(medium only) {
+        text-align: right;
+      }
+    }
+
+    .footer-right {
+      text-align: center;
+      padding-top: 1rem;
+
+      @include breakpoint(large) {
+        text-align: right;
+        padding: 0;
+      }
+    }
+  }
 }

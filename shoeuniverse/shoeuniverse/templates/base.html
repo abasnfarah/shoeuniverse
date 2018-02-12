@@ -29,6 +29,7 @@
         <link href="{% static 'sass/_foundation.scss' %}" media="screen" rel="stylesheet" type="text/x-scss">
         {% endcompress %}
 
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
         {% block extra_css %}
         
         {% endblock %}
@@ -40,7 +41,7 @@
         <div class="top-bar">
           <div class="top-bar-left">
             <ul class="menu">
-              <li class="menu-title"><a href="/">Site Title</a></li>
+              <li class="menu-title"><a href="/"><img src="/media/original_images/shoe_universe_logo_stacked_white.png" alt="Shoe Universe"/></a></li>
             </ul>
           </div>
           <div class="top-bar-right">
@@ -56,6 +57,19 @@
             {% block content %}{% endblock %}
         </div>
         <div class="footer grid-container-fluid">
+            <div class="footer-container grid grid-x">
+                <div class="footer-left cell small-12 medium-6 large-4">
+                    <a href="/"><img src="/media/original_images/shoe_universe_logo_horizontal_white.png" alt="Shoe Universe"/></a>
+                </div>
+                <div class="footer-center cell small-12 medium-6 large-4">
+                    <a><i class="fab fa-twitter"></i></a>
+                    <a><i class="fab fa-facebook-f"></i></a>
+                    <a><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="footer-right cell small-12 large-4">
+                    <small>Copyright &copy; Shoe Universe 2018</small>
+                </div>
+            </div>
         </div>
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/shoeuniverse.js' %}"></script>
