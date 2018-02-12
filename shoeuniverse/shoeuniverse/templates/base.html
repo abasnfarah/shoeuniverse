@@ -23,7 +23,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {# Global stylesheets #}
-
+        {% block branding_favicon %}
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+        {% endblock %}
         {% compress css %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/shoeuniverse.css' %}">
         <link href="{% static 'sass/_foundation.scss' %}" media="screen" rel="stylesheet" type="text/x-scss">
@@ -41,7 +43,7 @@
         <div class="top-bar">
           <div class="top-bar-left">
             <ul class="menu">
-              <li class="menu-title"><a href="/"><img src="/media/original_images/shoe_universe_logo_stacked_white.png" alt="Shoe Universe"/></a></li>
+              <li class="menu-title"><a href="/"><img src="{% static 'images/shoe_universe_logo_stacked_white.png' %}" alt="Shoe Universe"/></a></li>
             </ul>
           </div>
           <div class="top-bar-right">
@@ -59,7 +61,7 @@
         <div class="footer grid-container-fluid">
             <div class="footer-container grid grid-x">
                 <div class="footer-left cell small-12 medium-6 large-4">
-                    <a href="/"><img src="/media/original_images/shoe_universe_logo_horizontal_white.png" alt="Shoe Universe"/></a>
+                    <a href="/"><img src="{% static 'images/shoe_universe_logo_horizontal_white.png' %}" alt="Shoe Universe"/></a>
                 </div>
                 <div class="footer-center cell small-12 medium-6 large-4">
                     <a><i class="fab fa-twitter"></i></a>
