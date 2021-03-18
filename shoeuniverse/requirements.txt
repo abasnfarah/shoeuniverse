@@ -20,7 +20,7 @@ requests==2.18.4
 rjsmin==1.0.12
 six==1.11.0
 Unidecode==1.0.22
-urllib3==1.22
+urllib3==1.24.2
 wagtail==2.7.4
 wagtailgmaps==0.3.1
 webencodings==0.5.1
